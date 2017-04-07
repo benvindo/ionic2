@@ -17,4 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('products', 'Api\ProductsController@index');
+
+Route::group(['middleware' => 'cors'], function (){
+    Route::get('products', 'Api\ProductsController@index');
+    Route::get('products/{product}', 'Api\ProductsController@show');
+});

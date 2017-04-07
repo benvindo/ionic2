@@ -168,8 +168,9 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         \Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+        \Barryvdh\Cors\ServiceProvider::class,
 
-        /*
+	/*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
