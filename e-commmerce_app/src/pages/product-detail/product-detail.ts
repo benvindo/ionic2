@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions} from "@angular/http";
-//import {ProductListPage} from "../product-list/product-list";
+import {ProductListPage} from "../product-list/product-list";
+import {Cart} from "../../providers/cart";
 import 'rxjs/add/operator/toPromise';
 
 /*
@@ -20,7 +21,8 @@ export class ProductDetailPage {
   constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
-      public http: Http
+      public http: Http,
+      public cart: Cart
   ) {}
 
    ionViewDidLoad() {
@@ -31,6 +33,11 @@ export class ProductDetailPage {
         .toPromise().then((response) => {
       this.product = response.json();
     })
+  }
+
+  addToCart(){
+    this.cart.addItem(this.product);
+    this.navCtrl.setRoot(ProductListPage);
   }
 
 }

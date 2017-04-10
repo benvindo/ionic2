@@ -8,6 +8,7 @@ import {ProductDetailPage} from "../pages/product-detail/product-detail";
 import {LoginPage} from "../pages/login/login";
 import {MyCartPage} from "../pages/my-cart/my-cart";
 import {CheckoutPage} from "../pages/checkout/checkout";
+import {Cart} from "../providers/cart";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -40,6 +41,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    Cart,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
