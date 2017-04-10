@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {Http} from "@angular/http";
+import {Http, Headers, RequestOptions} from "@angular/http";
+//import {ProductListPage} from "../product-list/product-list";
+import 'rxjs/add/operator/toPromise';
 
 /*
   Generated class for the ProductDetail page.
@@ -21,8 +23,11 @@ export class ProductDetailPage {
       public http: Http
   ) {}
 
-  ionViewDidLoad() {
-    this.http.get(`http://ionic2.myprojects.work/api/products/${this.navParams.get('id')}`)
+   ionViewDidLoad() {
+    let headers = new Headers();
+    headers.set('Authorization', `Bearer ${window.localStorage['token']}`);
+    let requestOptions = new RequestOptions({headers});
+    this.http.get(`http://ionic2.myprojects.work/api/products/${this.navParams.get('id')}`, requestOptions)
         .toPromise().then((response) => {
       this.product = response.json();
     })

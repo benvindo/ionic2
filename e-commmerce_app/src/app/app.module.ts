@@ -5,6 +5,9 @@ import { Page1 } from '../pages/page1/page1';
 import { Page2 } from '../pages/page2/page2';
 import { ProductListPage } from '../pages/product-list/product-list';
 import {ProductDetailPage} from "../pages/product-detail/product-detail";
+import {LoginPage} from "../pages/login/login";
+import {MyCartPage} from "../pages/my-cart/my-cart";
+import {CheckoutPage} from "../pages/checkout/checkout";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +18,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Page1,
     Page2,
     ProductListPage,
-    ProductDetailPage
+    ProductDetailPage,
+    LoginPage,
+    MyCartPage,
+    CheckoutPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,7 +32,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Page1,
     Page2,
     ProductListPage,
-    ProductDetailPage
+    ProductDetailPage,
+    LoginPage,
+    MyCartPage,
+    CheckoutPage
   ],
   providers: [
     StatusBar,
