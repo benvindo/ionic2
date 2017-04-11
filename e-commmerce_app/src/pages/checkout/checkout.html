@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>checkout</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Checkout</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +18,31 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item>
+      <ion-label>Numero do cartao</ion-label>
+      <ion-input type="text" value="" [(ngModel)]="creditCard.num"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Código de segurança</ion-label>
+      <ion-input type="text" [(ngModel)]="creditCard.cvv"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Mês - Expiração</ion-label>
+      <ion-input type="text" [(ngModel)]="creditCard.monthExp"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Ano - Expiração</ion-label>
+      <ion-input type="text" [(ngModel)]="creditCard.yearExp"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="paymentCreditCard()">Pagar</button>
+
+  <ion-list>
+    <ion-item *ngFor="let o of cart.itens">
+      {{o.name}} - R$ {{o.value}}
+    </ion-item>
+  </ion-list>
 </ion-content>

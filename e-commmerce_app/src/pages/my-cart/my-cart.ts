@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Cart} from "../../providers/cart";
-
+import {CheckoutPage} from "../checkout/checkout";
 /*
   Generated class for the MyCart page.
 
@@ -24,6 +24,8 @@ export class MyCartPage {
     console.log('ionViewDidLoad MyCartPage');
   }
 
-  goToCheckout(){}
+  goToCheckout(){
+    this.navCtrl.push(CheckoutPage)
+  }
 
 }
